@@ -5,20 +5,16 @@ UR5e robot has urdf, collada and meshes in the original [ur_e_description](https
 It contains the following directories:
  - `convex/`: convex hulls (generated from pointclouds sampled from the dae meshes)
  - `rsdf/`: Special urdf-like format describing surfaces attached to links on the robot (The folder is empty)
- - `urdf/`: Import the [UR5e related urdf](https://github.com/ros-industrial/universal_robot/tree/kinetic-devel/ur_e_description/urdf) file and make partial changes.
-   - Conversion from xacro format to urdf format
-   - Change the package name (from ur_e_description/meshes/ur5e to mc_aliengo_description/meshes)
 
 ## Installation
 
-### ROS environment
 On an environment with ROS and catkin properly setup:
 
 ```
 $ cd ~/catkin_ws/src
 $ svn export https://github.com/ros-industrial/universal_robot/branches/kinetic-devel/ur_e_description
     (or '$ git clone https://github.com/ros-industrial/universal_robot.git')
-$ git clone https://github.com/@MC_UR5E_DESCRIPTION_REPOSITORY@
+$ git clone https://github.com/isri-aist/mc_ur5e_description
 $ cd ..
 $ catkin_make
 ```
@@ -41,21 +37,6 @@ $ roslaunch mc_ur5e_description display_ur5e.launch
 ```
 
  - If you have mc_rtc and the corresponding robot module installed, you can use the `convexes:=True` or `surfaces:=True` arguments to display the robot convexes and surfaces.
-
-### ROS-free environement
-
-If you are on an environment without ROS and catkin, you can still install the robot model such that it is found by the non-ROS packages.
-
-```
-$ cd src
-$ git clone https://github.com/@MC_UR5E_DESCRIPTION_REPOSITORY@
-$ cd @MC_UR5E_DESCRIPTION_PATH@
-$ mkdir build
-$ cd build
-$ cmake ..
-$ make
-$ sudo make install
-```
 
 ***
 
