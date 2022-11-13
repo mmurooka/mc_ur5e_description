@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<package format="2">
+    <name>mc_ur5e_description</name>
+    <version>0.0.0</version>
+    <description>The mc_ur5e_description package</description>
+
+    <maintainer email="kidera@piecake.com">s-kidera</maintainer>
+    <license>TODO</license>
+
+    <buildtool_depend>catkin</buildtool_depend>
+    <depend>ur_e_description</depend>
+</package>

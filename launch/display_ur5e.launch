@@ -1,0 +1,26 @@
+<launch>
+  <arg name="convexes" default="false" />
+  <arg name="surfaces" default="false" />
+
+  <include file="$(find mc_ur5e_description)/launch/ur5e_upload.launch"/>
+
+  <group if="$(eval convexes==false and surfaces==false)">
+    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" >
+      <param name="use_gui" value="true"/>
+    </node>
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find mc_ur5e_description)/launch/view_robot.rviz" />
+  </group>
+
+  <group if="$(eval convexes==true and surfaces==false)">
+    <include file="$(find mc_convex_visualization)/launch/display.launch">
+      <arg name="robot" value="UR5e" />
+    </include>
+  </group>
+
+  <group if="$(eval convexes==false and surfaces==true)">
+    <include file="$(find mc_surfaces_visualization)/launch/display.launch">
+      <arg name="robot" value="UR5e" />
+    </include>
+  </group>
+</launch>
