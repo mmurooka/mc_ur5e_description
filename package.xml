@@ -8,5 +8,5 @@
     <license>TODO</license>
 
     <buildtool_depend>catkin</buildtool_depend>
-    <depend>ur_e_description</depend>
+    <depend>ur_description</depend>
 </package>
