@@ -20,10 +20,7 @@ $ git clone https://github.com/isri-aist/mc_ur5e_description
 $ cd ..
 $ catkin_make
 ```
-Execute `convert_from_xacro_to_urdf.sh` to generate ur5e.urdf file.
-```
-$ rosrun mc_ur5e_description convert_from_xacro_to_urdf.sh
-```
+
 If you install into a different directory than the src directory of the catkin workspace, run the following commands.
 ```
 $ cd build

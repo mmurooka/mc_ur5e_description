@@ -14,12 +14,3 @@ jobs:
     steps:
       - name: Catkin build
         uses: jrl-umi3218/github-actions/build-catkin-project@master
-      - name: Run the convert script
-        run: |
-          set -e
-          set -x
-          cd ${GITHUB_WORKSPACE}/catkin_ws
-          set +x
-          . devel/setup.bash
-          set -x
-          rosrun mc_ur5e_description convert_from_xacro_to_urdf.sh
