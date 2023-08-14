@@ -12,7 +12,7 @@ exit_if_error()
 
 # set configuration variables
 export robot_name="ur5e"
-export robot_desc_name="ur_e_description"
+export robot_desc_name="ur_description"
 export target_pkg_name="mc_${robot_name}_description"
 
 export org_path=`rospack find ${robot_desc_name}`       # original robot_description package path (assuming this has dae mesh files)

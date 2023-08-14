@@ -2,12 +2,10 @@
   <arg name="convexes" default="false" />
   <arg name="surfaces" default="false" />
 
-  <include file="$(find mc_ur5e_description)/launch/ur5e_upload.launch"/>
+  <param name="robot_description" textfile="$(find mc_ur5e_description)/urdf/ur5e.urdf" />
 
   <group if="$(eval convexes==false and surfaces==false)">
-    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" >
-      <param name="use_gui" value="true"/>
-    </node>
+    <node name="joint_state_publisher" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" />
     <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
     <node name="rviz" pkg="rviz" type="rviz" args="-d $(find mc_ur5e_description)/launch/view_robot.rviz" />
   </group>
